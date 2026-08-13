@@ -61,7 +61,8 @@ review.md            # auditoría de código con plan de remediación
 
 ## Revisión
 
-Ver `review.md` para la auditoría de código completa y el estado del plan de remediación.
+- `review.md` — auditoría de código completa y estado del plan de remediación.
+- `docs/continuar.md` — lee este documento al iniciar una sesión para retomar el trabajo pendiente.
 
 ---
 
