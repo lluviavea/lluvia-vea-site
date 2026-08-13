@@ -1,0 +1,5 @@
+{
+  // Personal-site docs contain long URLs, file references and tables.
+  // Line length (MD013) is not enforceable without breaking readability.
+  "MD013": false,
+}

@@ -1,0 +1,29 @@
+amends "package://github.com/jdx/hk/releases/download/v1.55.0/hk@1.55.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.55.0/hk@1.55.0#/Builtins.pkl"
+
+local linters = new Mapping<String, Step> {
+    ["prettier"] = Builtins.prettier
+    ["eslint"] = Builtins.eslint
+    ["markdown"] = Builtins.markdown_lint
+    ["editorconfig"] = Builtins.editorconfig_checker
+}
+
+hooks {
+    ["commit-msg"] {
+        steps {
+            ["conventional"] = Builtins.check_conventional_commit
+        }
+    }
+    ["pre-commit"] {
+        fix = true
+        stash = "git"
+        steps = linters
+    }
+    ["fix"] {
+        fix = true
+        steps = linters
+    }
+    ["check"] {
+        steps = linters
+    }
+}
